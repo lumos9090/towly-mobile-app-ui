@@ -91,7 +91,7 @@ export function Home() {
                     />
                   </div>
                   <div className="flex-1" />
-                  <MoodAvatar src={mood.img} size={80} />
+                  <MoodAvatar src={mood.img} size={100} />
                 </div>
 
                 <div className="mb-4">

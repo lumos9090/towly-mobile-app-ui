@@ -40,15 +40,24 @@ function Toggle({
   );
 }
 
-// Stacked folded towel icon (custom SVG)
-function TowelIcon({ size = 22, color = 'white' }: { size?: number; color?: string }) {
+// Fresh & Chill towel mascot for widget previews
+function TowelMascot({ size = 24 }: { size?: number }) {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
-      <rect x="3" y="15" width="18" height="5" rx="1.5" fill={color} fillOpacity="0.85" />
-      <rect x="4" y="10" width="16" height="5" rx="1.5" fill={color} />
-      <rect x="4" y="12" width="16" height="1" rx="0.5" fill="#F5D4C1" fillOpacity="0.7" />
-      <rect x="5" y="5" width="14" height="5" rx="1.5" fill={color} fillOpacity="0.85" />
-    </svg>
+    <img
+      src="/avatars/towel-fresh.png"
+      alt=""
+      aria-hidden="true"
+      width={size}
+      height={size}
+      style={{
+        width: size,
+        height: size,
+        objectFit: 'cover',
+        display: 'block',
+        borderRadius: size * 0.25,
+        backgroundColor: 'rgba(255, 255, 255, 0.15)',
+      }}
+    />
   );
 }
 
@@ -73,7 +82,7 @@ function SmallWidget({
       }}
     >
       <div className="flex justify-between items-start">
-        <TowelIcon size={22} />
+        <TowelMascot size={27} />
         <div
           className="w-2 h-2 rounded-full bg-white"
           style={{ boxShadow: '0 0 0 2px rgba(255,255,255,0.3)' }}
@@ -122,7 +131,7 @@ function MediumWidget({
     >
       <div className="flex justify-between items-center mb-3">
         <div className="flex items-center gap-2">
-          <TowelIcon size={18} />
+          <TowelMascot size={23} />
           <p className="text-white text-[13px] font-medium m-0">My Towels</p>
         </div>
         <p className="text-white/70 text-[10px] m-0">{towels.length} active</p>
